@@ -1,9 +1,7 @@
 package examen;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 
 public class Ejercicio03 {
     public static void informacionVideojuegos(File file){
@@ -12,7 +10,19 @@ public class Ejercicio03 {
             ArrayList<String> consolas = new ArrayList<>();
             while (f.hasNextLine()){
                 String linea = f.nextLine();
-                String[] tabla = linea.split(";");
+                String[] tabla = linea.split(",");
+                consolas.add(tabla[2]);
+            }
+            /**
+             * PRE
+             * POST: Este proceso me permite borrar todos los elementos repetidos asi podre saber las consolas
+             * diferentes.
+             */
+            Set<String> hashSet = new HashSet<String>(consolas);
+            consolas.clear();
+            consolas.addAll(hashSet);
+            for (String s : consolas) {
+                System.out.println(s);
             }
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -23,5 +33,6 @@ public class Ejercicio03 {
     public static void main(String[] args) {
         File file;
         file = new File("C:\\Users\\PABLO\\OneDrive\\Escritorio\\ventasVideojuegos.csv");
+        informacionVideojuegos(file);
     }
 }

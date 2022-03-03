@@ -21,13 +21,15 @@ public class Ejercicio02 {
             String linea = sc.nextLine();
             String[] tabla = linea.split(" ");
             for (int i = 0; i < tabla.length; i++) {
-                System.out.println(tabla[i].replaceAll(",", " ").replaceAll("\\.", " ").
-                        replaceAll("\"", " ").replaceAll(" () ", " "));
-                if (Objects.equals(tabla[i], tamaño)) {
-                    contador++;
+                tabla[i].replaceAll(",", " ").replaceAll("\\.", " ").
+                        replaceAll("\"", " ").replaceAll("\\( ", " ").replaceAll("\\) ", " ");
+                if (tabla[i] != " ") {
+                    if (tabla[i].length() >= longitud) {
+                        contador++;
+                    }
                 }
             }
-            System.out.println(contador);
+            System.out.println("Hay "+ contador);
 
         } catch (Exception e) {
             System.out.println(e.toString());
