@@ -1,5 +1,7 @@
 package examen;
 
+import java.util.ArrayList;
+
 public class Jugador {
     private String nombre;
     private Integer dorsal;
@@ -64,6 +66,7 @@ public class Jugador {
 
     }
 
+    public static void vidas(ArrayList)
 
     @Override
     public String toString() {

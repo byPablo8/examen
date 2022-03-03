@@ -4,11 +4,11 @@ import java.io.File;
 import java.util.*;
 
 public class Ejercicio03 {
-    public static void informacionVideojuegos(File file){
+    public static void informacionVideojuegos(File file) {
         try {
             Scanner f = new Scanner(file);
             ArrayList<String> consolas = new ArrayList<>();
-            while (f.hasNextLine()){
+            while (f.hasNextLine()) {
                 String linea = f.nextLine();
                 String[] tabla = linea.split(",");
                 consolas.add(tabla[2]);

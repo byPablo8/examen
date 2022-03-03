@@ -14,22 +14,25 @@ public class Ejercicio02 {
      */
 
     public static void palabrasMasLargasQue(int longitud, File file) {
+        int contador = 0;
         try {
-            int contador = 0;
-            String tamaño = "";
-            Scanner sc = new Scanner(file);
-            String linea = sc.nextLine();
+            Scanner f = new Scanner(file);
+            String linea = f.nextLine();
             String[] tabla = linea.split(" ");
             for (int i = 0; i < tabla.length; i++) {
-                tabla[i].replaceAll(",", " ").replaceAll("\\.", " ").
-                        replaceAll("\"", " ").replaceAll("\\( ", " ").replaceAll("\\) ", " ");
+                tabla[i].replaceAll(",", "").replaceAll("\\.", "").
+                        replaceAll("\"", "").replaceAll("\\( ", "").
+                        replaceAll("\\) ", "").replaceAll(":","");
+            }
+            for (int i = 0; i < tabla.length; i++) {
                 if (tabla[i] != " ") {
                     if (tabla[i].length() >= longitud) {
                         contador++;
                     }
                 }
             }
-            System.out.println("Hay "+ contador);
+
+            System.out.println("Hay estas palabras mayores o iguales: " + contador);
 
         } catch (Exception e) {
             System.out.println(e.toString());
@@ -37,7 +40,7 @@ public class Ejercicio02 {
     }
 
     public static void main(String[] args) {
-        int longitud = 4;
+        int longitud = 8;
         File file;
         file = new File("C:\\Users\\PABLO\\OneDrive\\Escritorio\\textoExamen.txt");
         palabrasMasLargasQue(longitud, file);
