@@ -2,6 +2,11 @@ package examen;
 
 import java.util.ArrayList;
 
+/**
+ * PRE:
+ * POST: Creo el objeto jugador con todos sus atributos
+ */
+
 public class Jugador {
     private String nombre;
     private Integer dorsal;
@@ -66,7 +71,10 @@ public class Jugador {
 
     }
 
-    public static void vidas(ArrayList)
+    public static void vidas(ArrayList<Jugador>  jugadores){
+
+
+    }
 
     @Override
     public String toString() {

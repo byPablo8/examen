@@ -4,6 +4,14 @@ import java.io.File;
 import java.util.*;
 
 public class Ejercicio03 {
+
+    /**
+     * pre:
+     * post: Este metodo busca las consolas disponibles para cada juego
+     *
+     * @param file
+     */
+
     public static void informacionVideojuegos(File file) {
         try {
             Scanner f = new Scanner(file);
@@ -29,6 +37,15 @@ public class Ejercicio03 {
         }
 
     }
+
+    /**
+     * pre:
+     * post: Implementa un método informacionVideojuegos() que devuelve un ArrayList<String> que
+     * agrupe todas las plataformas para las que hay videojuegos en el fichero entregado. Es
+     * decir, se debe almacenar UNA SOLA VEZ, cada una de las plataformas que aparecen en
+     * el fichero .csv.
+     * @param args
+     */
 
     public static void main(String[] args) {
         File file;

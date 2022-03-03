@@ -64,6 +64,18 @@ public class Ejercicio01 {
                 contador_vidas++;
             }
         }
-    }
 
+        while (contador_vidas > 1) {
+            int portero = (int) (Math.random() * 10);
+            int lanzador = portero + 1;
+            int resultado_portero = (int) (Math.random() * 10);
+            resultado_portero = resultado_portero + j1.getHabilidad_portero();
+            int resultado_lanzador = (int) (Math.random() * 10);
+            resultado_lanzador = resultado_lanzador + j1.getPotencia_disparo();
+            if (resultado_lanzador > resultado_portero) {
+                contador_vidas = contador_vidas - 1;
+            }
+        }
+
+    }
 }
